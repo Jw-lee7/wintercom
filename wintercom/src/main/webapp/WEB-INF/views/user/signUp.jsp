@@ -17,16 +17,19 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js" type="text/javascript"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+<!-- 구글폰트 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
 </head>
 <body>
 	<section class="ftco-section" style="background-image: url('../resources/signUp/images/wintercom_signUp.jpg');">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">WINTERCOME Sign Up</h2>
+					<h2 class="heading-section">WINTERCOME SIGN UP</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -36,7 +39,7 @@
 							<span class="fa fa-edit"></span>
 						</div>
 						<h3 class="text-center mb-4">Create Your Account</h3> 
-						<form action="/signUpProc" class="signup-form" method="post"
+						<form action="/user/signUpProc" class="signup-form" method="post"
 							name="signUpForm">
 
 							<div class="form-group mb-3">
@@ -81,7 +84,7 @@
 							<div class="form-group mb-3">
 								<span style="color: #ff0018;">*</span>
 								<label class="label" for="tel">Tel <span style="color: #ff0018;">('-'를 제외하고 입력해주세요.)</span></label><br> <input
-									type="tel" class="form-control" name="phone" id="phone"
+									type="tel" class="form-control" name="tel" id="tel"
 									required="required"
 									maxlength="11" pattern="[0-9]{3}[0-9]{4}[0-9]{4}">
 							</div>

@@ -34,7 +34,7 @@ function sample6_execDaumPostcode() {
 		if(idVal != "" && idVal != null){
 			if(idPattern.test(idVal)){
 				$.ajax({
-					url : "/idCk",
+					url : "/user/dupIdCk",
 					type : "POST",
 					dataType : "JSON",
 					data :{"id" : idVal},
@@ -92,7 +92,7 @@ function sample6_execDaumPostcode() {
 			if(emailValue != "" && emailValue != null){
 				if(emailPattern.test(emailValue)){
 					$.ajax({
-						url : "/emailCk",
+						url : "/user/dupEmailCk",
 						type : "POST",
 						dataType : "JSON",
 						data :{"email" : emailValue},
@@ -120,7 +120,7 @@ function sample6_execDaumPostcode() {
 		var pw2 = document.getElementsByName("pw2")[0];
 		var name = document.getElementsByName("name")[0];
 		var email = document.getElementsByName("email")[0];
-		var phone = document.getElementsByName("phone")[0];
+		var tel = document.getElementsByName("tel")[0];
 		var postcode = document.getElementsByName("postcode")[0];
 		var addr = document.getElementsByName("addr")[0];
 		var detailAddr = document.getElementsByName("detailAddr")[0];
@@ -129,7 +129,7 @@ function sample6_execDaumPostcode() {
 		var idPattern = /^[A-za-z0-9]{5,15}/g;
 		var pwPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,15}$/;
 		var emailPattern = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-		var phonePattern = /^\d{3}\d{3,4}\d{4}$/;
+		var telPattern = /^\d{3}\d{3,4}\d{4}$/;
 		
 		// submit전 유효성체크(아이디)
 		if(id.value == "" || id.value == null){
@@ -195,15 +195,15 @@ function sample6_execDaumPostcode() {
 			return false;
 		}
 		
-		if(phone.value == "" || phone.value == null){
+		if(tel.value == "" || tel.value == null){
 			alert("전화번호를 입력하세요.");
-			phone.focus();
+			tel.focus();
 			return false;
 		}
 		
-		if(!phonePattern.test(phone.value)){
+		if(!telPattern.test(tel.value)){
 			alert("전화번호 형식이 아닙니다.");
-			phone.focus();
+			tel.focus();
 			return false;
 		}		
 		document.signUpForm.submit();

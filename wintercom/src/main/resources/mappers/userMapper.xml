@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project.wintercom.mappers.userMapper">
+	
+	<!-- 회원등록 -->
+	<insert id="registerUser">
+		INSERT INTO USER_TABLE(id,pw,name,email,tel,postcode,addr,detailAddr,userStatus,mail_auth,mail_key,regDate)
+		VALUES(#{id},#{pw},#{name},#{email},#{tel},#{postcode},#{addr},#{detailAddr},0,0,0,now())
+	</insert>
+	
+	<!-- 중복아이디 체크  -->
+	<select id="dupIdCk" resultType="int">
+		SELECT COUNT(*) FROM USER_TABLE WHERE id = #{id}
+	</select>
+	
+	<!-- 중복이메일 체크 -->
+	<select id="dupEmailCk" resultType="int">
+		SELECT COUNT(*) FROM USER_TABLE WHERE email = #{email}
+	</select>
+	
+</mapper>

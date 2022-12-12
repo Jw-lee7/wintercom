@@ -12,6 +12,11 @@
 <link rel="stylesheet" href="../resources/login/css/bootstrap.min.css">
 <!-- Style -->
 <link rel="stylesheet" href="../resources/login/css/style.css">
+
+<!-- 구글폰트 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div class="d-lg-flex half">
@@ -23,7 +28,7 @@
 				<div class="row align-items-center justify-content-center">
 					<div class="col-md-7">
 						<div class="mb-4">
-							<h3>Welcome Wintercom!</h3>
+							<h3 class="mainTitle">Welcome Wintercom!</h3>
 							<p class="mb-4">Wintercom 기념품 사이트에 오신것을 환영합니다. 사이트를 이용하기
 							위해서는 로그인이 필요합니다.</p>
 						</div>
