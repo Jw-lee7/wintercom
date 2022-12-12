@@ -31,5 +31,29 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public int dupEmailCk(UserVO uvo) throws Exception {
 		return sqlSession.selectOne(namespace + ".dupEmailCk",uvo);
+	}
+
+	// 회원조회
+	@Override
+	public UserVO searchUser(UserVO uvo) throws Exception {
+		return sqlSession.selectOne(namespace + ".searchUser",uvo);
+	}
+
+	// 메일인증키 생성
+	@Override
+	public int updateMailKey(UserVO uvo) throws Exception {
+		return sqlSession.update(namespace + ".updateMailKey",uvo);
+	}
+
+	// 메일인증 상태 변경
+	@Override
+	public int updateMailAuth(UserVO uvo) throws Exception {
+		return sqlSession.update(namespace + ".updateMailAuth",uvo);
+	}
+
+	// 이메일 인증 유/무 체크
+	@Override
+	public int emailAuthFail(String id) throws Exception {
+		return sqlSession.selectOne(namespace + ".emailAuthFail",id);
 	}	
 }

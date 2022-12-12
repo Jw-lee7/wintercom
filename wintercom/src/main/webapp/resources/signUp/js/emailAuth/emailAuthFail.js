@@ -6,7 +6,7 @@
 	function fn_resendMail(){
 		document.querySelector("#btn_resendMail").setAttribute("disabled", "true");
 		$.ajax({
-			url : "/resend-mail",
+			url : "/user/resend-mail",
 			type : "POST",
 			dataType : "JSON",
 			data :{"id" : userId},

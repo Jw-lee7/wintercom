@@ -9,6 +9,11 @@
 		VALUES(#{id},#{pw},#{name},#{email},#{tel},#{postcode},#{addr},#{detailAddr},0,0,0,now())
 	</insert>
 	
+	<!-- 회원조회 -->
+	<select id="searchUser" resultType="project.wintercom.domain.UserVO">
+		SELECT * FROM USER_TABLE WHERE id = #{id} or email = #{email}
+	</select>
+	
 	<!-- 중복아이디 체크  -->
 	<select id="dupIdCk" resultType="int">
 		SELECT COUNT(*) FROM USER_TABLE WHERE id = #{id}
@@ -17,6 +22,21 @@
 	<!-- 중복이메일 체크 -->
 	<select id="dupEmailCk" resultType="int">
 		SELECT COUNT(*) FROM USER_TABLE WHERE email = #{email}
+	</select>
+	
+	<!-- 메일인증키 생성 -->
+	<update id="updateMailKey" parameterType="project.wintercom.domain.UserVO">
+		UPDATE USER_TABLE SET mail_key = #{mail_key} WHERE email = #{email} and id = #{id}
+	</update>
+	
+	<!-- 메일인증 상태 변경 -->
+	<update id="updateMailAuth" parameterType="project.wintercom.domain.UserVO">
+		UPDATE USER_TABLE SET mail_auth = 1, userStatus = 1 WHERE email = #{email}
+	</update>
+	
+	<!-- 이메일 인증 유/무 체크  -->
+	<select id="emailAuthFail" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM USER_TABLE WHERE id = #{id} and mail_auth = 1
 	</select>
 	
 </mapper>

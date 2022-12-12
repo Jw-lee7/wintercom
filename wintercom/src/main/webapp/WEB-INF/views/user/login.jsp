@@ -32,15 +32,15 @@
 							<p class="mb-4">Wintercom 기념품 사이트에 오신것을 환영합니다. 사이트를 이용하기
 							위해서는 로그인이 필요합니다.</p>
 						</div>
-						<form action="#" method="post">
+						<form action="/user/loginProc" method="post">
 							<div class="form-group first">
 								<label for="id">ID</label> <input type="text"
-									class="form-control" id="id">
+									class="form-control" id="id" name="id">
 
 							</div>
 							<div class="form-group last mb-3">
 								<label for="password">Password</label> <input type="password"
-									class="form-control" id="password">
+									class="form-control" id="pw" name="pw">
 
 							</div>
 
