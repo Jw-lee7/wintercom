@@ -14,5 +14,10 @@ public class UserController {
 	public String loginPage() throws Exception {
 		return "/user/login";
 	}
+	
+	@GetMapping(value = "/user/signUp")
+	public String signUppage() throws Exception {
+		return "/user/signUp";
+	}
 
 }
